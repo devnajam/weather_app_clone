@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
           error: 'Error, please try again',
         });
       } else {
-        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+        let weatherText = `It's ${weather.main.temp} degrees fahrenheit in ${weather.name}!`;
         res.render('index', { weather: weatherText, error: null });
       }
     })
