@@ -1,0 +1,18 @@
+{
+  "name": "weather_app_clone",
+  "version": "1.0.0",
+  "description": "This is a clone of weather app from github",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Najam",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}
