@@ -2,19 +2,17 @@ const express = require('express');
 const rp = require('request-promise');
 const app = express();
 
-const apiKey = '01c0e3480c04b5d33e701401bb685e94';
-
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-
+require('dotenv').config();
 app.get('/', (req, res) => {
   res.render('index', { weather: null, error: null });
 });
 
 app.post('/', (req, res) => {
   const city = req.body.city;
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.API_KEY}`;
 
   rp(url)
     .then((body) => {
